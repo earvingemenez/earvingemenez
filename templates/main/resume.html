@@ -1,0 +1,183 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Earvin Gemenez | Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Earvin Gemenez Resume">
+    <meta name="author" content="Earvin Gemenez">
+    <!-- Le styles -->
+    <link href="{% static 'resume/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'resume/style.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Fallback for NoScript -->
+    <noscript>
+    <style type="text/css">
+     body {
+        display: block;
+     }
+    </style>
+    </noscript>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+  </head>
+
+  <body style="display: block;">
+        <section class="container">
+
+            <!-- Header -->
+            <header class="row-fluid">
+                <div class="title span7">
+                    <img src="{% static 'img/team/earvin1.jpg' %}" title="That`s me!" alt="My Profile">
+                    <h1>Jan Earvin Gemenez</h1>
+                    <h2>Software Developer</h2>
+                </div>
+                <div class="social offset1 span4">
+                    <ul>
+                        <li><i class="icon-home"></i> Horseshoe drive, Bajada</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Davao City, Philippines</li>
+                        <li><i class="icon-envelope-alt"></i> earvin.gemenez@gmail.com</li>
+                        <li><i class="icon-phone"></i> +63 917 701 7405</li>
+                        <li>
+                            <a href="http://www.twitter.com/tomomoii" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/earvin.gemenez" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://github.com/earvingemenez" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="http://ph.linkedin.com/in/tomomoi" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="http://www.tomomoi.com" target="_blank"><i class="fa fa-code"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Welcome Text -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Hello!</h3>
+                </header>
+                <div class="span9 ">
+                    <p class="welcome">”With regard to excellence, it is not enough to know, but we must try to have and use it.” <br>
+                    </p><p class="auth"> <i>Aristotle</i>  </p>
+                </div>
+            </article>
+
+            <!-- Skills -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Skills</h3>
+                </header>
+                <div class="span9">
+                    <div class="row-fluid skills">
+                        <ul class="span6">
+                            <li><h4>Technical</h4></li>
+                            <li><strong>HTML</strong></li>
+                            <li><strong>CSS</strong></li>
+                            <li><strong>Twitter Bootstrap</strong></li>
+                            <li><strong>Javascript / Jquery / AJAX</strong></li>
+                            <li><strong>Ember JS</strong></li>
+                            <li><strong>Python Language</strong></li>
+                            <li><strong>Django web framework (python)</strong></li>
+                            <li><strong>Flask web framework (python)</strong></li>
+                            <li><strong>Scrapy framework (python)</strong></li>
+                            <li><strong>OpenCV framework (python)</strong></li>
+                            <li><strong>Mysql / SQLite / Postgresql / CouchDB</strong></li>
+                            <li><strong>Git</strong></li>
+                            <li><strong>Mercurial</strong></li>
+                            <li><strong>Nginx / uwsgi</strong></li>
+                            <li><strong>Apache</strong></li>
+                            <li><strong>Heroku</strong></li>
+                            <li><strong>Linux/Ubuntu</strong></li>
+                        </ul>
+                        <ul class="span6">
+                            <li><h4>Technologies</h4></li>
+                            <li><strong>JIRA / Trello / Assembla / Pivotal Tracker</strong></li>
+                            <li><strong>Authorizenet API</strong></li>
+                            <li><strong>Paypal API</strong></li>
+                            <li><strong>Recurly API</strong></li>
+                            <li><strong>Django CMS / Mezzanine CMS</strong></li>
+                            <li><strong>django-crispy-form</strong></li>
+                            <li><strong>django-social-auth</strong></li>
+                            <li><strong>numpy</strong></li>
+                            <li><strong>south</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Work -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Work Experience</h3>
+                </header>
+                <div class="span9">
+                    <h4>Ingenuity.ph (2011 - Present)</h4>
+                    <h5>Python /  Django Developer</h5>
+                    <p>Worked as a developer that specializes in Python language and Django framework</p>
+                    <h4>Bixly.com (2011 - 2013)</h4>
+                    <h5>Python / Django Developer</h5>
+                    <p>Worked as a Python/Django developer using Agile methodologies.</p>
+                    <h4>DMP Lending Corporation</h4>
+                    <h5>Project Manager / Lead Developer</h5>
+                    <p>Designed the structure of the project. I also manage the development of their Payroll and Accounting system and write the codes at the same time.</p>
+                    <h4>All Deals Leak</h4>
+                    <h5>Python/Scrapy Developer</h5>
+                    <p>Worked as a their Backend Developer and handles their data scraping functionalities.</p>
+                    <h4>Bownce</h4>
+                    <h5>Python/Django Developer</h5>
+                    <p>Worked as a their Backend Developer and use Python/Django framework</p>
+                    <h4>Adaptivhub</h4>
+                    <h5>Python/Django Developer</h5>
+                    <p>Worked as Python / Django developer</p>
+                </div>
+            </article>
+
+            <!-- Education -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Education</h3>
+                </header>
+                <div class="span9">
+                    <h4>Ateneo de Davao University</h4>
+                    <h5>2007-2011</h5>
+                        <p>Bachelor of Science in Computer Science</p>
+                    <h4>Davao Christian Highschool</h4>
+                    <h5>2003 - 2007</h5>
+                </div>
+            </article>
+
+            <!-- Interests -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Interests / Activities</h3>
+                </header>
+                <div class="span9">
+                    <h4>Programming</h4>
+                    <p>I personally love to write codes. I always dream of making a cool application that people will recognize and maybe help the world. I spend most of my time working on my personal project. (*Note: I just do it for fun!)</p>
+                    <h4>Sports</h4>
+                    <p>Other than the geeky stuff that i am doing, I also love playing Basketball. I was part of our varsity team(basketball) when i was in high school but now because of my busy schedule i just played once every week.</p>
+                    <h4>Music</h4>
+                    <p>I love music specially japanese rock. I find their music very cool and for me they are really good at playing their insturments. I play the bass guitar and i'm also part of a rock band.</p>
+                    <h4>Python Community</h4>
+                    <p>I am very active to a local community here in our place and it is called <a href="http://www.twitter.com/durianpy">DurianPy</a>. Actually i am one of the organizer and the one who started it. The goal of this community is to have a meet-up once a month to gather the pythonistas and those who love python. We talk about geeky stuff and at the same time learn new things.</p>
+                </div>
+            </article>
+
+            <!-- Footer -->
+            <footer>
+                © 2014 Jan Earvin Gemenez&nbsp;&nbsp;&nbsp;
+                <a href="javascript:;" onclick="javascript:window.print();">Print</a> | <a href="#top">To top <i class="icon-arrow-up"></i></a>
+
+            </footer>
+    </section>
+
+<script src="resume/jquery.js"></script>
+<script src="resume/main.js"></script>
+
+
+
+</body></html>

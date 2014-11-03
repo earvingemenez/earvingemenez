@@ -1,0 +1,301 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Earvin Gemenez Portfolio Website">
+        <meta name="author" content="Earvin Gemenez">
+
+        <title>Earvin Gemenez</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        {% block extra_css %}{% endblock %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body id="page-top" class="index">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">Earvin Gemenez</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#whatido">What i do</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">About Me</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#experience">Work Experience</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Hi, my name is <strong style="color:#fed136; font-size:54px;">Earvin</strong></div>
+                    <div class="intro-heading">and I'm a Python Developer</div>
+
+                    <a href="#whatido" class="page-scroll btn btn-xl">Tell Me More!</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Services Section -->
+        <section id="whatido">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">What i do?</h2>
+                        <h3 class="section-subheading text-muted">I work as a Software Developer and i use <a href="http://python.org" target="_blank">Python Language</a> in my projects.</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Web Applications</h4>
+                        <p class="text-muted">I write codes in python and create web application using <a href="http://djangoproject.com" target="_blank">Django Framework</a>.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Mobile Backend (APIs)</h4>
+                        <p class="text-muted">I create REST API's using <a href="http://python.org" target="_blank">Python</a> to be used in mobile applications.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Crazy Things</h4>
+                        <p class="text-muted">During my free time, I work on mini projects (web and mobile) with my colleagues. the goal is to maybe help other people or solve some problems that people encounter today... and ALSO TO HAVE FUN ofcourse!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="about" class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <div class="team-member">
+                            <img src="{% static 'img/team/earvin.jpg' %}" class="img-responsive img-circle" alt="">
+                            <h4>Earvin Gemenez</h4>
+                            <p class="text-muted">Software Developer</p>
+                            <ul class="list-inline social-buttons">
+                                <li><a href="https://twitter.com/tomomoii" target="_blank"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://facebook.com/earvingemenez" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li><a href="http://ph.linkedin.com/in/tomomoi" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <h2 class="section-heading">Who am I?</h2>
+                            <p>I am a Software Developer and i develop web applications. I write codes in <a href="http://python.org" target="_blank">Python</a> and use <a href="http://djangoproject.com" target="_blank">Django Web Framework</a> on most of my projects.
+                            I live in Davao City, Philippines which is a very awesome place (lots of Durian fruits! and very friendly people). I like to work on cool projects that has impact to our current society and maybe help mankind in the near future (solve poverty issue).
+                            </p>
+                            <br />
+                            <div class="col-sm-offset-2">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="{% url 'resume_view' %}" class="btn btn-warning" target="_blank"><i class="fa fa-codepen"></i> Curriculum vitae</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://github.com/earvingemenez" class="btn btn-warning" target="_blank"><i class="fa fa-github"></i>&nbsp;&nbsp;Github</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://tomomoi.tumblr.com" class="btn btn-warning" target="_blank"><i class="fa fa-code"></i>&nbsp;&nbsp;Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <p class="large text-muted">"Don't worry about failure, You only have to be right once." - Drew Houston (Dropbox)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="experience">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Timeline</h2>
+                        <h3 class="section-subheading text-muted">My work experience. click <a href="{% url 'resume_view' %}">HERE</a> to see my skillsets</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="timeline">
+                            {% for item in timeline %}
+                            <li class="{% if forloop.counter|divisibleby:2 %}timeline-inverted{% endif %}">
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="{% if item.image %}{{ MEDIA_URL }}{{ item.image }}{% else %}{% static 'img/about/3.jpg' %}{% endif %}" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>{{ item.year }}</h4>
+                                        <h4 class="subheading">{{ item.name }}</h4>
+                                        <h5>{{ item.job_title }}</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">{{ item.description }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <h4>Once
+                                        <br>upon
+                                        <br>a time...</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Keep in touch with me</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <br /><br />
+                <div class="row" id="contact-container">
+                    <!-- contact form -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">earvingemenez | Copyright &copy; 2014</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline social-buttons">
+                            <li><a href="http://twitter.com/tomomoii" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="http://facebook.com/earvingemenez" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="http://ph.linkedin.com/in/tomomoi" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li><a href="http://tomomoi.tumblr.com" target="_blank">Blog</a>
+                            </li>
+                            <li><a href="{% url 'resume_view' %}" target="_blank">CV</a>
+                            </li>
+                            <li><a href="http://github.com/earvingemenez" target="_blank">Github</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery Version 1.11.0 -->
+        <script src="{% static 'js/jquery-1.11.0.js' %}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="{% static 'js/classie.js' %}"></script>
+        <script src="{% static 'js/cbpAnimatedHeader.js' %}"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{% static 'js/agency.js' %}"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+
+            $.get("{% url 'contact_view' %}", function(response) {
+                // load contact form
+                $('#contact-container').html(response);
+
+            });
+
+
+        });
+        </script>
+
+        {% block extra_js %}{% endblock %}
+
+    </body>
+
+</html>
