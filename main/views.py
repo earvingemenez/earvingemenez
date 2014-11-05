@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from portfolio.models import Timeline
+from portfolio.models import Timeline, Skill, Education, Interest
 from .forms import ContactForm
 
 
@@ -30,6 +30,15 @@ class ResumeView(TemplateView):
     context = {}
 
     def get(self, *args, **kwargs):
+        # Work experience
+        self.context['timeline'] = Timeline.objects.all().order_by('-position')
+        # Skillset
+        self.context['skills'] = Skill.objects.all()
+        # Education
+        self.context['education'] = Education.objects.all().order_by('-id')
+        # Interests
+        self.context['Interests'] = Interest.objects.all()
+
         return render(self.request, self.template_name, self.context)
 
 

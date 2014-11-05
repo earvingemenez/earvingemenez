@@ -74,37 +74,16 @@
                 <div class="span9">
                     <div class="row-fluid skills">
                         <ul class="span6">
-                            <li><h4>Technical</h4></li>
-                            <li><strong>HTML</strong></li>
-                            <li><strong>CSS</strong></li>
-                            <li><strong>Twitter Bootstrap</strong></li>
-                            <li><strong>Javascript / Jquery / AJAX</strong></li>
-                            <li><strong>Ember JS</strong></li>
-                            <li><strong>Python Language</strong></li>
-                            <li><strong>Django web framework (python)</strong></li>
-                            <li><strong>Flask web framework (python)</strong></li>
-                            <li><strong>Scrapy framework (python)</strong></li>
-                            <li><strong>OpenCV framework (python)</strong></li>
-                            <li><strong>Mysql / SQLite / Postgresql / CouchDB</strong></li>
-                            <li><strong>Git</strong></li>
-                            <li><strong>Mercurial</strong></li>
-                            <li><strong>Nginx / uwsgi</strong></li>
-                            <li><strong>Apache</strong></li>
-                            <li><strong>Heroku</strong></li>
-                            <li><strong>Linux/Ubuntu</strong></li>
+                        {% for skill in skills %}
+                            {% if forloop.counter == 20 %}
+                            </ul>
+                            <ul class="span6">
+                            {% else %}
+                                <li><strong><a href="#">{{ skill.name }}</a></strong></li>
+                            {% endif %}
+                        {% endfor %}
                         </ul>
-                        <ul class="span6">
-                            <li><h4>Technologies</h4></li>
-                            <li><strong>JIRA / Trello / Assembla / Pivotal Tracker</strong></li>
-                            <li><strong>Authorizenet API</strong></li>
-                            <li><strong>Paypal API</strong></li>
-                            <li><strong>Recurly API</strong></li>
-                            <li><strong>Django CMS / Mezzanine CMS</strong></li>
-                            <li><strong>django-crispy-form</strong></li>
-                            <li><strong>django-social-auth</strong></li>
-                            <li><strong>numpy</strong></li>
-                            <li><strong>south</strong></li>
-                        </ul>
+
                     </div>
                 </div>
             </article>
@@ -115,24 +94,11 @@
                     <h3>Work Experience</h3>
                 </header>
                 <div class="span9">
-                    <h4>Ingenuity.ph (2011 - Present)</h4>
-                    <h5>Python /  Django Developer</h5>
-                    <p>Worked as a developer that specializes in Python language and Django framework</p>
-                    <h4>Bixly.com (2011 - 2013)</h4>
-                    <h5>Python / Django Developer</h5>
-                    <p>Worked as a Python/Django developer using Agile methodologies.</p>
-                    <h4>DMP Lending Corporation</h4>
-                    <h5>Project Manager / Lead Developer</h5>
-                    <p>Designed the structure of the project. I also manage the development of their Payroll and Accounting system and write the codes at the same time.</p>
-                    <h4>All Deals Leak</h4>
-                    <h5>Python/Scrapy Developer</h5>
-                    <p>Worked as a their Backend Developer and handles their data scraping functionalities.</p>
-                    <h4>Bownce</h4>
-                    <h5>Python/Django Developer</h5>
-                    <p>Worked as a their Backend Developer and use Python/Django framework</p>
-                    <h4>Adaptivhub</h4>
-                    <h5>Python/Django Developer</h5>
-                    <p>Worked as Python / Django developer</p>
+                    {% for work in timeline %}
+                        <h4>{{ work.name }} ({{ work.year }})</h4>
+                        <h5>{{ work.job_title }}</h5>
+                        <p>{{ work.description }}</p>
+                    {% endfor %}
                 </div>
             </article>
 
@@ -142,11 +108,13 @@
                     <h3>Education</h3>
                 </header>
                 <div class="span9">
-                    <h4>Ateneo de Davao University</h4>
-                    <h5>2007-2011</h5>
-                        <p>Bachelor of Science in Computer Science</p>
-                    <h4>Davao Christian Highschool</h4>
-                    <h5>2003 - 2007</h5>
+                    {% for edu in education %}
+                    <h4>{{ edu.school }}</h4>
+                    <h5>{{ edu.year }}</h5>
+                        {% if edu.course %}
+                        <p>{{ edu.course }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </article>
 
@@ -156,14 +124,10 @@
                     <h3>Interests / Activities</h3>
                 </header>
                 <div class="span9">
-                    <h4>Programming</h4>
-                    <p>I personally love to write codes. I always dream of making a cool application that people will recognize and maybe help the world. I spend most of my time working on my personal project. (*Note: I just do it for fun!)</p>
-                    <h4>Sports</h4>
-                    <p>Other than the geeky stuff that i am doing, I also love playing Basketball. I was part of our varsity team(basketball) when i was in high school but now because of my busy schedule i just played once every week.</p>
-                    <h4>Music</h4>
-                    <p>I love music specially japanese rock. I find their music very cool and for me they are really good at playing their insturments. I play the bass guitar and i'm also part of a rock band.</p>
-                    <h4>Python Community</h4>
-                    <p>I am very active to a local community here in our place and it is called <a href="http://www.twitter.com/durianpy">DurianPy</a>. Actually i am one of the organizer and the one who started it. The goal of this community is to have a meet-up once a month to gather the pythonistas and those who love python. We talk about geeky stuff and at the same time learn new things.</p>
+                    {% for interest in interests %}
+                    <h4>{{ interest.name }}</h4>
+                    <p>{{ interest.description }}</p>
+                    {% endfor %}
                 </div>
             </article>
 
