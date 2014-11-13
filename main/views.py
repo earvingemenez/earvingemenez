@@ -37,7 +37,7 @@ class ResumeView(TemplateView):
         # Education
         self.context['education'] = Education.objects.all().order_by('-id')
         # Interests
-        self.context['Interests'] = Interest.objects.all()
+        self.context['interests'] = Interest.objects.all()
 
         return render(self.request, self.template_name, self.context)
 
