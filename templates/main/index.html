@@ -1,301 +1,666 @@
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js">
     <head>
-
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Earvin Gemenez Portfolio Website">
+        <meta name="description" content="python/django developer profile">
         <meta name="author" content="Earvin Gemenez">
-
         <title>Earvin Gemenez</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="{% static 'css/agency.css' %}" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-        {% block extra_css %}{% endblock %}
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        
+        <!-- Stylesheets -->
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/bootstrapValidator.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/ladda-themeless.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/jasny-bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/jquery.bxslider.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/app.css' %}" rel="stylesheet">
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
+        
+        <!-- Respond.js IE8 support of media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <script src="{% static 'assets/js/respond.min.js' %}"></script>
         <![endif]-->
-
+        
+        <script src="{% static 'assets/js/pace.min.js' %}"></script>
+        <script src="{% static 'assets/js/modernizr.min.js' %}"></script>      
     </head>
-
-    <body id="page-top" class="index">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">Earvin Gemenez</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#whatido">What i do</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">About Me</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#experience">Work Experience</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
-                        </li>
+    <body>
+        <!-- Menu -->
+        <div class="navmenu navmenu-fixed-right offcanvas">
+            <a href="#" class="navmenu-brand">
+            <img class="navmenu-brand" src="{% static 'assets/img/logo/logo.png' %}" alt="Logo">
+            <span class="btn-close" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">&times;</span>
+            </a>
+            <ul class="nav navmenu-nav">
+                <li class="open">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                    <ul class="dropdown-menu navmenu-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#portfolio">Contact</a></li>
                     </ul>
-                </div>
-                <!-- /.navbar-collapse -->
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <header class="navbar intro-header">
+            <div class="col-md-6">
+                <!-- <img class="navmenu-brand" src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"> -->
             </div>
-            <!-- /.container-fluid -->
-        </nav>
-
-        <!-- Header -->
-        <header>
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-lead-in">Hi, my name is <strong style="color:#fed136; font-size:54px;">Earvin</strong></div>
-                    <div class="intro-heading">and I'm a Python Developer</div>
-
-                    <a href="#whatido" class="page-scroll btn btn-xl">Tell Me More!</a>
-                </div>
+            <div class="col-md-6">
+                <a href="#" class="pull-right navbar-btn" id="menuToggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+                <i class="fa fa-reorder"></i>
+                </a>
             </div>
         </header>
-
-        <!-- Services Section -->
-        <section id="whatido">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">What i do?</h2>
-                        <h3 class="section-subheading text-muted">I work as a Software Developer and i use <a href="http://python.org" target="_blank">Python Language</a> in my projects.</h3>
+        
+        <!-- Main -->
+        <section class="main" id="home">
+            <div class="page">
+                <div class="wrapper">
+                    <div class="container">
+                        <h1 class="heading">Earvin Gemenez</h1>
+                        <p>
+                            <span class="rotate">Python Developer, Django Developer</span>
+                        </p>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Web Applications</h4>
-                        <p class="text-muted">I write codes in python and create web application using <a href="http://djangoproject.com" target="_blank">Django Framework</a>.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Mobile Backend (APIs)</h4>
-                        <p class="text-muted">I create REST API's using <a href="http://python.org" target="_blank">Python</a> to be used in mobile applications.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Crazy Things</h4>
-                        <p class="text-muted">During my free time, I work on mini projects (web and mobile) with my colleagues. the goal is to maybe help other people or solve some problems that people encounter today... and ALSO TO HAVE FUN ofcourse!</p>
+                    <div class="arrow-down">
+                        <a class="scroll" href="#about" id="scroll"><i class="fa fa-angle-double-down"></i></a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Team Section -->
-        <section id="about" class="bg-light-gray">
+        
+        <!-- About -->
+        <section id="about" class="section section-solid">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 col-sm-offset-1">
-                        <div class="team-member">
-                            <img src="{% static 'img/team/earvin.jpg' %}" class="img-responsive img-circle" alt="">
-                            <h4>Earvin Gemenez</h4>
-                            <p class="text-muted">Software Developer</p>
-                            <ul class="list-inline social-buttons">
-                                <li><a href="https://twitter.com/tomomoii" target="_blank"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li><a href="https://facebook.com/earvingemenez" target="_blank"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li><a href="http://ph.linkedin.com/in/tomomoi" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                            </ul>
+                    <div class="col-sm-12">
+                        <h3 class="section-title">About</h3>
+                        <div class="section-title-border"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt20">
+                    <div class="col-sm-4 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <img src="{% static 'assets/img/about/me.jpg' %}" class="img-responsive about-img" />
+                    </div>
+                    <div class="col-sm-8 wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <p class="lead">
+                            Nunc eget congue dui, in venenatis elit. Nam purus urna, 
+                            mollis a dolor nec, rutrum gravida tellus.
+                        </p>
+                        <p>I work as a software developer and I specialize on developing Web and Mobile
+                            applications. Most of my projects are written in <a href="http://python.org">Python language</a>
+                            and <a href="http://djangoproject.com">Django web framework</a>.
+                        </p>
+                        <p>I live in Davao City Philippines which is a very cool and awesome place because their
+                            are lots of Durian fruits which i love and also has very friendly people and safe environment.
+                        </p>
+                        <p>I love working on cool ideas specially those that doesn't just make money but also solves the problems
+                            that we are currently facing, ideas that has impact to our current society (solves poverty issues) and maybe help
+                            mankind in the near future. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services -->
+        <section class="section section-solid-white" id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="section-title">What i do</h3>
+                        <div class="section-title-border"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-life-ring"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Backend Development</h4>
+                                    <p>I work on projects that was built in Python
+                                        and Django Framework for almost 4 years now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-paint-brush"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Frontend Development</h4>
+                                    <p>I am familiar with adapative/responsive template designs (SASS) and 
+                                        use technologies like bootstrap, zurb foundation for faster development.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-cogs"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Test Driven Development</h4>
+                                    <p>Tests are very important for web applications. this ensures that
+                                        the main idea of a feature/functionality is being followed, lessen
+                                        code conflicts/issues/errors, and also prevents spending too much
+                                        time tracing errors. It's one of my practice to write atleast unittests
+                                        and functional tests(selenium) to the apps that i am working on. 
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div>
-                            <h2 class="section-heading">Who am I?</h2>
-                            <p>I am a Software Developer and i develop web applications. I write codes in <a href="http://python.org" target="_blank">Python</a> and use <a href="http://djangoproject.com" target="_blank">Django Web Framework</a> on most of my projects.
-                            I live in Davao City, Philippines which is a very awesome place (lots of Durian fruits! and very friendly people). I like to work on cool projects that has impact to our current society and maybe help mankind in the near future (solve poverty issue).
-                            </p>
-                            <br />
-                            <div class="col-sm-offset-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="{% url 'resume_view' %}" class="btn btn-warning" target="_blank"><i class="fa fa-codepen"></i> Curriculum vitae</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://github.com/earvingemenez" class="btn btn-warning" target="_blank"><i class="fa fa-github"></i>&nbsp;&nbsp;Github</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://tomomoi.tumblr.com" class="btn btn-warning" target="_blank"><i class="fa fa-code"></i>&nbsp;&nbsp;Blog</a>
-                                    </li>
-                                </ul>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-mobile-phone"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Mobile Development</h4>
+                                    <p>I am familiar with mobile development and is currently
+                                        learning on iOS, and cross-platform frameworks (like Polymer, Titanium, Kivy).
+                                        Even though i am still learning on building mobile apps (client side) I am very
+                                        familiar with building it's backend using REST apis. I use django-rest-framework,
+                                        tastypie and ofcourse Django for the REST backend.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-rocket"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Agility and Scrum</h4>
+                                    <p>I am familiar with these methodologies and I am practicing both.
+                                        I know sprint planning, sizing, daily scrum, and retrospective.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box-container">
+                            <div class="feature-box">
+                                <div class="icon">
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <div class="description">
+                                    <h4>Help and Share</h4>
+                                    <p>I organize a small python community in our place. We do monthly
+                                        meetups and talk about technologies, ideas, and cool stuff related
+                                        to software development. We also do free trainings to help students
+                                        be updated with the latest tools used in mobile and web development.
+                                        I also work on internal projects together with other developers here
+                                        in our place because we want to help try to solve common problems that
+                                        the society is currently facing.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        
+        <!-- Section -->
+        <section class="section" id="tweets">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <p class="large text-muted">"Don't worry about failure, You only have to be right once." - Drew Houston (Dropbox)</p>
+                    <div class="col-sm-12 text-center wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <i class="fa fa-twitter twitter-feed-icon"></i>
+                        <span id="feedback">
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="experience">
+        
+        <!-- Resume -->
+        <section id="resume" class="section section-solid">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Timeline</h2>
-                        <h3 class="section-subheading text-muted">My work experience. click <a href="{% url 'resume_view' %}">HERE</a> to see my skillset</h3>
+                    <div class="col-sm-12">
+                        <h3 class="section-title">Resume</h3>
+                        <div class="section-title-border"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <ul class="timeline">
+                    <div class="col-sm-12">
+                        <ul class="v-timeline mt50">
+                            <li>
+                                <h3 class="v-heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-paper-plane-o"></i> Work experience</h3>
+                            </li>
                             {% for item in timeline %}
-                            <li class="{% if forloop.counter|divisibleby:2 %}timeline-inverted{% endif %}">
-                                <div class="timeline-image">
-                                    <img class="img-circle img-responsive" src="{% if item.image %}{{ MEDIA_URL }}{{ item.image }}{% else %}{% static 'img/about/3.jpg' %}{% endif %}" alt="">
-                                </div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4>{{ item.year }}</h4>
-                                        <h4 class="subheading">{{ item.name }}</h4>
-                                        <h5>{{ item.job_title }}</h5>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p class="text-muted">{{ item.description }}</p>
-                                    </div>
+                            <li>
+                                <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s" datetime="{% now 'Y-j-m H:i' %}"><span>{{ item.year }}</span></time>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ item.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
+                                <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s" >
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ item.id }}">{{ item.name|title }}</a></h4>
+                                    <h5>{{ item.job_title|title }}</h5>
+                                    <p id="toggle-{{ item.id }}" class="collapse {% if forloop.first %}in{% endif %}">{{ item.description }}</p>
                                 </div>
                             </li>
                             {% endfor %}
-                            <li class="timeline-inverted">
-                                <div class="timeline-image">
-                                    <h4>Once
-                                        <br>upon
-                                        <br>a time...</h4>
+                        </ul>
+                        <ul class="v-timeline mt50">
+                            <li>
+                                <h3 class="v-heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-graduation-cap"></i> Education and Activities</h3>
+                            </li>
+                            {% for edu in education %}
+                            <li>
+                                <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.3s" datetime="{% now 'Y-j-m H:i' %}"><span>{{ edu.year }}</span></time>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ edu.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
+                                <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.3s">
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ edu.id }}">{{ edu.school }}</a></h4>
+                                    <p id="toggle-{{ edu.id }}" class="collapse  {% if forloop.first %}in{% endif %}">{{ edu.course }}</p>
                                 </div>
                             </li>
+                            {% endfor %}
+                            {% for interest in interests %}
+                            <li>
+                                <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.4s" datetime="2013-04-18"><span></span></time>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ interest.id }}"><i class="fa fa-minus"></i></div>
+                                <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.4s">
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ interest.id }}">{{ interest.name }}</a></h4>
+                                    <p id="toggle-{{ interest.id }}" class="collapse">{{ interest.description }}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Contact section -->
-        <section id="contact">
+        
+        <!-- Skills -->
+        <section class="section" id="skills">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Keep in touch with me</h2>
-                        <div class="clearfix"></div>
+                    <div class="col-sm-12">
+                        <h3 class="section-title">Skills</h3>
+                        <div class="section-title-border"></div>
                     </div>
                 </div>
-
-                <br /><br />
-                <div class="row" id="contact-container">
-                    <!-- contact form -->
+                <div class="row personal-skills">
+                    <div class="col-sm-6 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <h4>Skill Set</h4>
+                        <h6>Python</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;">
+                                95%
+                            </div>
+                        </div>
+                        <h6>Django Framework</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+                                90%
+                            </div>
+                        </div>
+                        <h6>HTML,&nbsp;&nbsp;CSS,&nbsp;&nbsp;JAVASCRIPT</h6>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%;">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <h4>Knowledge</h4>
+                        <div class="col-sm-6">
+                            <ul class="fa-ul skills-ul">
+                                {% for skill in skills|slice:":7" %}
+                                <li><i class="fa-li fa fa-check"></i>{{ skill.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="fa-ul skills-ul">
+                                {% for skill in skills|slice:"7:14" %}
+                                <li><i class="fa-li fa fa-check"></i>{{ skill.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="row personal-skills">
+                    <div class="col-sm-6 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.1s">
+                        <div class="lang-container">
+                            <input type="text" value="90" class="dial" 
+                                data-width="100"
+                                data-height="100"
+                                data-fgColor="#869198"
+                                data-skin="tron"
+                                data-thickness=".2"
+                                data-displayPrevious=true
+                                data-readOnly=true>
+                            <p class="lang-description">Backend</p>
+                            <span class="lang-level">native</span>
+                        </div>
+                        
+                        <div class="lang-container">
+                            <input type="text" value="85" class="dial" 
+                                data-width="100"
+                                data-height="100"
+                                data-fgColor="#869198"
+                                data-skin="tron"
+                                data-thickness=".2"
+                                data-displayPrevious=true
+                                data-readOnly=true>
+                            <p class="lang-description">Frontend</p>
+                            <span class="lang-level">advanced</span>
+                        </div>
+                        
+                        <div class="lang-container">
+                            <input type="text" value="80" class="dial" 
+                                data-width="100"
+                                data-height="100"
+                                data-fgColor="#869198"
+                                data-skin="tron"
+                                data-thickness=".2"
+                                data-displayPrevious=true
+                                data-readOnly=true
+                                data-bgColor="#fff">
+                            <p class="lang-description">Server Administration</p>
+                            <span class="lang-level">advance</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.1s">
+                        <div class="col-sm-12">
+                        <ul class="fa-ul skills-ul">
+                            {% for skill in skills|slice:"14:" %}
+                            <li><i class="fa-li fa fa-check"></i>{{ skill.name }}</li>
+                            {% endfor %}
+                        </ul> 
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
+        
+        <!-- Portfolio -->
+        <section id="portfolio" class="section section-solid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="section-title">Portfolio</h3>
+                        <div class="section-title-border"></div>
+                    </div>
+                </div>
+                <div class="row wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s">
+                    <div class="col-sm-12 text-center">
+                        <ul id="filter" class="list-inline filter-tags">
+                            <li><a href="#" class="btn btn-sm btn-theme-inverse active" data-group="all">All</a></li>
+                            <li><a href="#" class="btn btn-sm btn-theme-inverse" data-group="branding">Branding</a></li>
+                            <li><a href="#" class="btn btn-sm btn-theme-inverse" data-group="web">Web</a></li>
+                            <li><a href="#" class="btn btn-sm btn-theme-inverse" data-group="app">App</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="GITheWall">
+                <ul id="portfolio-container" class="text-center wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s">
+                    <li class="portfolio-item" data-groups='["all", "branding"]' data-contenttype="ajax" data-href="assets/ajax/1.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Mollis magna</span>
+                                    <span class="category">branding</span>
+                                </a>
+                                <img src="assets/img/portfolio/1.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "web"]' data-contenttype="ajax" data-href="assets/ajax/2.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Suspendisse potenti</span>
+                                    <span class="category">web</span>
+                                </a>
+                                <img src="assets/img/portfolio/2.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "app"]' data-contenttype="ajax" data-href="assets/ajax/1.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Sed hendrerit</span>
+                                    <span class="category">app</span>
+                                </a>
+                                <img src="assets/img/portfolio/3.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "branding"]' data-contenttype="ajax" data-href="assets/ajax/2.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Etiam commodo lacus</span>
+                                    <span class="category">branding</span>
+                                </a>
+                                <img src="assets/img/portfolio/4.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "web"]' data-contenttype="ajax" data-href="assets/ajax/1.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Ac tristique</span>
+                                    <span class="category">web</span>
+                                </a>
+                                <img src="assets/img/portfolio/5.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "app"]' data-contenttype="ajax" data-href="assets/ajax/2.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Ipsum tempor quis</span>
+                                    <span class="category">app</span>
+                                </a>
+                                <img src="assets/img/portfolio/6.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "branding"]' data-contenttype="ajax" data-href="assets/ajax/1.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Donec accumsan</span>
+                                    <span class="category">branding</span>
+                                </a>
+                                <img src="assets/img/portfolio/7.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "web"]' data-contenttype="ajax" data-href="assets/ajax/2.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Arcu id porta</span>
+                                    <span class="category">web</span>
+                                </a>
+                                <img src="assets/img/portfolio/8.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "app"]' data-contenttype="ajax" data-href="assets/ajax/1.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Curabitur posuere</span>
+                                    <span class="category">app</span>
+                                </a>
+                                <img src="assets/img/portfolio/9.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="portfolio-item" data-groups='["all", "branding"]' data-contenttype="ajax" data-href="assets/ajax/2.html">
+                        <figure>
+                            <div class="portfolio-img">
+                                <a href="#" class="overlay">
+                                    <span class="title">Lacus id sapien</span>
+                                    <span class="category">branding</span>
+                                </a>
+                                <img src="assets/img/portfolio/10.jpg" alt="" class="img-responsive">
+                            </div>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <a href="#" class="btn btn-theme-inverse mt40 wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0.5s" id="portfolio-more">More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Facts -->
+        <section id="facts" class="section">
+            <div class="container">
+                <div class="row text-center wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s">
+                    <div class="col-sm-4">
+                        <h1 class="counter">4</h1>
+                        <p>years of experience</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1>$<span class="counter">25</span></h1>
+                        <p>hourly rate</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="counter">28</h1>
+                        <p>project delivered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="section-title">Contact</h3>
+                        <div class="section-title-border"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <p>
+                            <strong>Integer suscipit</strong> gravida felis quis ornare. 
+                            Pellentesque consectetur dui eu nulla vestibulum, 
+                            ac euismod diam auctor. 
+                        </p>
+                        <ul class="list-contacts">
+                            <li><i class="fa fa-mobile-phone"></i> (+63) 917-701-7405</li>
+                            <li><i class="fa fa-map-marker"></i> Davao City, Philippines</li>
+                            <li><i class="fa fa-envelope-o"></i> <a href="mailto:earvin.gemenez@gmail.com">earvin.gemenez@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s">
+                        <form class="form-horizontal" action="assets/php/contactForm.php" method="post" role="form" id="contactForm">
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Name"> 
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="contactEmail" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <textarea name="message" class="form-control" rows="8" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-theme ladda-button" data-style="expand-left">
+                                    <span class="ladda-label">Submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <span class="copyright">earvingemenez | Copyright &copy; 2014</span>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="list-inline social-buttons">
-                            <li><a href="http://twitter.com/tomomoii" target="_blank"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="http://facebook.com/earvingemenez" target="_blank"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="http://ph.linkedin.com/in/tomomoi" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="list-inline quicklinks">
-                            <li><a href="http://tomomoi.tumblr.com" target="_blank">Blog</a>
-                            </li>
-                            <li><a href="{% url 'resume_view' %}" target="_blank">CV</a>
-                            </li>
-                            <li><a href="http://github.com/earvingemenez" target="_blank">Github</a>
-                            </li>
-                        </ul>
+                    <div class="col-sm-6">Copyright &copy; 2015 earvingemenez. All rights reserved.</div>
+                    <div class="col-sm-6 text-right">
+                        <div class="social">
+                            <a href="https://www.facebook.com/earvin.gemenez" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+                            <a href="http://www.twitter.com/tomomoii" class="btn btn-theme"><i class="fa fa-twitter"></i></a>
+                            <a href="http://tomomoi.tumblr.com" class="btn btn-theme"><i class="fa fa-tumblr"></i></a>
+                            <a href="https://github.com/earvingemenez" class="btn btn-theme"><i class="fa fa-github"></i></a>
+                            <a href="http://ph.linkedin.com/in/tomomoi" class="btn btn-theme"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.odesk.com/users/~0144b0608644881e82" class="btn btn-theme"><i class="fa fa-user"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
-
-        <!-- jQuery Version 1.11.0 -->
-        <script src="{% static 'js/jquery-1.11.0.js' %}"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-        <!-- Plugin JavaScript -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="{% static 'js/classie.js' %}"></script>
-        <script src="{% static 'js/cbpAnimatedHeader.js' %}"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="{% static 'js/agency.js' %}"></script>
-
-        <script type="text/javascript">
-        $(document).ready(function() {
-
-            $.get("{% url 'contact_view' %}", function(response) {
-                // load contact form
-                $('#contact-container').html(response);
-
-            });
-
-
-        });
-        </script>
-
-        {% block extra_js %}{% endblock %}
-
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrapValidator.min.js' %}"></script>
+        <script src="{% static 'assets/js/validator/emailAddress.js' %}"></script>
+        <script src="{% static 'assets/js/spin.min.js' %}"></script>
+        <script src="{% static 'assets/js/ladda.min.js' %}"></script>
+        <script src="{% static 'assets/js/retina.min.js' %}"></script>
+        <script src="{% static 'assets/js/jasny-bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.shuffle.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.bxslider.min.js' %}"></script>
+        <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'assets/js/jQuery.GI.TheWall.min.js' %}"></script>
+        <script src="{% static 'assets/js/twitterFetcher.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.simple-text-rotator.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.throttledresize.js' %}"></script>
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.knob.min.js' %}"></script>
+        <script src="{% static 'assets/js/app.js' %}"></script>
     </body>
-
 </html>

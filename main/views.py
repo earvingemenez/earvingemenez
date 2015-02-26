@@ -20,6 +20,12 @@ class IndexView(TemplateView):
         # Get timeline data
         timeline = Timeline.objects.all().order_by('-position')
         self.context['timeline'] = timeline
+        # Skillset
+        self.context['skills'] = Skill.objects.all()
+        # Education
+        self.context['education'] = Education.objects.all().order_by('-id')
+        # Interests
+        self.context['interests'] = Interest.objects.all()
 
         return render(self.request, self.template_name, self.context)
 

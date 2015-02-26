@@ -52,3 +52,12 @@ class Interest(models.Model):
 
     def __unicode__(self):
         return "%s" % self.name
+
+
+class Feedback(models.Model):
+
+    content = models.TextField(null=True)
+    author = models.CharField(max_length=255, null=True, blank=True)
+
+    def __unicode__(self):
+        return "%s" % self.author
