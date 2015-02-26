@@ -5,6 +5,7 @@ from .models import (
     Skill,
     Education,
     Interest,
+    Feedback,
 )
 
 
@@ -14,3 +15,4 @@ admin.site.register(Project)
 admin.site.register(Skill)
 admin.site.register(Education)
 admin.site.register(Interest)
+admin.site.register(Feedback)

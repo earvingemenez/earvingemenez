@@ -164,20 +164,29 @@ $(function () {
 	// 	}
 	// });
 
-	var tweetsHtml = '<ul class="feedback">';
-	var list = ['aasdsadsadsadsadsa', 'aasdasdsadasdasdsab', 'casdsadsadsadsadsa'];
-	var n = 0;
-	while(n < list.length) {
-		tweetsHtml += '<li>' + list[n] + '</li>';
-		n++;
-	}
-	tweetsHtml += '</ul>';
-	$('#feedback').html(tweetsHtml);
-	$(".feedback").bxSlider({
-		nextText: "",
-		prevText: ""
-	});
+	$.get('/portfolio/feedback', {})
+		.done(function(response) {
+			var feedHtml = $('<ul>').prop('class', 'feedback');
+			var x = response.length;
+			var n = 0;
 
+			while(n < x) {
+				var li = $('<li>');
+				var content = $('<p>').text(response[n].fields.content);
+				var author = $('<p>').text('~ ' + response[n].fields.author);
+
+				li.append(content);
+				li.append(author);
+				feedHtml.append(li);
+				n++;
+			}
+
+			$('#feedback').html(feedHtml);
+			$(".feedback").bxSlider({
+				nextText: "",
+				prevText: ""
+			});
+		});
 
 	/* ---------------------------------------------------------
 	 *	Portfolio
