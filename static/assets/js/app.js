@@ -299,7 +299,7 @@ $(function () {
 						message: 'Name cannot be empty'
 					},
 					stringLength: {
-						min: 6,
+						min: 3,
 						max: 30,
 						message: 'Name must be more than 6 and less than 30 characters long'
 					},
@@ -309,7 +309,7 @@ $(function () {
 					}
 				}
 			},
-			contactEmail: {
+			email: {
 				validators: {
 					notEmpty: {
 						message: 'Email cannot be empty'
@@ -319,7 +319,7 @@ $(function () {
 					}
 				}
 			},
-			message: {
+			content: {
 				validators: {
 					notEmpty: {
 						message: 'Message cannot be empty'
