@@ -270,11 +270,11 @@
                             {% for item in timeline %}
                             <li>
                                 <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s" datetime="{% now 'Y-j-m H:i' %}"><span>{{ item.year }}</span></time>
-                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ item.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-t{{ item.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
                                 <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s" >
-                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ item.id }}">{{ item.name|title }}</a></h4>
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-t{{ item.id }}">{{ item.name|title }}</a></h4>
                                     <h5>{{ item.job_title|title }}</h5>
-                                    <p id="toggle-{{ item.id }}" class="collapse {% if forloop.first %}in{% endif %}">{{ item.description }}</p>
+                                    <p id="toggle-t{{ item.id }}" class="collapse {% if forloop.first %}in{% endif %}">{{ item.description }}</p>
                                 </div>
                             </li>
                             {% endfor %}
@@ -286,20 +286,20 @@
                             {% for edu in education %}
                             <li>
                                 <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.3s" datetime="{% now 'Y-j-m H:i' %}"><span>{{ edu.year }}</span></time>
-                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ edu.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-e{{ edu.id }}"><i class="fa fa-{% if forloop.first %}minus{% else %}plus{% endif %}"></i></div>
                                 <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.3s">
-                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ edu.id }}">{{ edu.school }}</a></h4>
-                                    <p id="toggle-{{ edu.id }}" class="collapse  {% if forloop.first %}in{% endif %}">{{ edu.course }}</p>
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-e{{ edu.id }}">{{ edu.school }}</a></h4>
+                                    <p id="toggle-e{{ edu.id }}" class="collapse  {% if forloop.first %}in{% endif %}">{{ edu.course }}</p>
                                 </div>
                             </li>
                             {% endfor %}
                             {% for interest in interests %}
                             <li>
                                 <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.4s" datetime="2013-04-18"><span></span></time>
-                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-{{ interest.id }}"><i class="fa fa-minus"></i></div>
+                                <div class="v-icon" data-toggle="collapse" data-target="#toggle-i{{ interest.id }}"><i class="fa fa-plus"></i></div>
                                 <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.4s">
-                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-{{ interest.id }}">{{ interest.name }}</a></h4>
-                                    <p id="toggle-{{ interest.id }}" class="collapse">{{ interest.description }}</p>
+                                    <h4><a href="#" data-toggle="collapse" data-target="#toggle-i{{ interest.id }}">{{ interest.name }}</a></h4>
+                                    <p id="toggle-i{{ interest.id }}" class="collapse">{{ interest.description }}</p>
                                 </div>
                             </li>
                             {% endfor %}
@@ -414,7 +414,7 @@
         </section>
         
         <!-- Portfolio -->
-        <section id="portfolio" class="section section-solid">
+        <!-- <section id="portfolio" class="section section-solid">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -554,7 +554,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         
         <!-- Facts -->
         <section id="facts" class="section">
